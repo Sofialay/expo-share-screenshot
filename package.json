@@ -1,0 +1,35 @@
+{
+  "name": "expo-share-screenshot",
+  "version": "1.0.0",
+  "description": "A library to capture and share screenshots in Expo apps.",
+  "main": "src/ShareableScreenshot.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sofilay/expo-share-screenshot.git"
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "screenshot",
+    "sharing"
+  ],
+  "author": "Sofi Lay",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-view-shot": "^3.1.2",
+    "expo-sharing": "^10.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5",
+    "@types/react": "^17.0.20",
+    "@types/react-native": "^0.64.12"
+  }
+}
