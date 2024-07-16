@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, Button, Modal, Image, ActivityIndicator } from 'react-native';
+import { View, Button, Modal, Image, ActivityIndicator, Touchable, TouchableOpacity } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
 import { styles } from './ShareableScreenshot.styles';
@@ -8,7 +8,7 @@ import { ShareableScreenshotProps } from './ShareableScreenshot.types';
 const ShareableScreenshot: React.FC<ShareableScreenshotProps> = ({ 
   children, 
   buttonText = "Share Screenshot", 
-  buttonStyle, 
+  buttonStyle = {},
   hideDuringCapture = false, 
   format = 'png',
   quality = 0.8,
@@ -55,7 +55,9 @@ const ShareableScreenshot: React.FC<ShareableScreenshotProps> = ({
       <View ref={viewRef} style={[{ flex: 1 }, isHidden && styles.hidden]}>
         {children}
       </View>
-      <Button style={buttonStyle} title={buttonText} onPress={takeScreenshot} />
+      <TouchableOpacity style={buttonStyle}>
+        <Button title={buttonText} onPress={takeScreenshot} />
+      </TouchableOpacity>
 
       {screenshotUri && (
         <Modal visible={true} transparent={true} animationType="slide">
